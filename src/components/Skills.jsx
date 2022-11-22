@@ -1,4 +1,5 @@
-import Circle from "react-circle";
+import { CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 import { requestStates } from "../constants";
 import { useSkills } from "../customHooks/useSkills";
 
@@ -21,9 +22,9 @@ export const Skills = () => {
                 <p className="description">
                   <strong>{item.language}</strong>
                 </p>
-                <Circle
-                  animate
-                  progress={converseCountToPercentage(item.count)}
+                <CircularProgressbar
+                  value={converseCountToPercentage(item.count)}
+                  text={`${converseCountToPercentage(item.count)}%`}
                 />
               </div>
             ))}
